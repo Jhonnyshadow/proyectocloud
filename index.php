@@ -21,7 +21,7 @@ and open the template in the editor.
   icon: "warning",
 })
 .then((willDelete) => {
-  window.location.replace("http://localhost/proyectocloud/view/");
+  window.location.replace("http://proyectocloud1.herokuapp.com/view/");
 });
 }
  

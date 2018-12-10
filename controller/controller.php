@@ -182,7 +182,7 @@ switch ($opcion) {
         function error_elim_contra(){
             swal("Hoho no..!", "Nesecita eliminar los Trabajos del obrero antes.", "error")
 .then((value) => {
-  window.location.replace("http://localhost/proyectocloud/view/listacontratos.php");
+  window.location.replace("http://proyectocloud1.herokuapp.com/view/listacontratos.php");
 });
             }
 error_elim_contra(); 
@@ -205,7 +205,7 @@ error_elim_contra();
         function error_elim_contra(){
             swal("Hoho no..!", "Nesecita eliminar los Datos del Obrero y los Trabajos antes.", "error")
 .then((value) => {
-  window.location.replace("http://localhost/proyectocloud/view/listacontratos.php");
+  window.location.replace("http://proyectocloud1.herokuapp.com/view/listacontratos.php");
 });
             }
 error_elim_contra(); 
@@ -224,7 +224,7 @@ error_elim_contra();
         function error_elim_contra(){
             swal("Operación Exitosamente!", "Datos del Obrero Eliminados", "success")
 .then((value) => {
-  window.location.replace("http://localhost/proyectocloud/view/obreros.php");
+  window.location.replace("http://proyectocloud1.herokuapp.com/view/obreros.php");
 });
             }
 error_elim_contra(); 
@@ -236,7 +236,7 @@ error_elim_contra();
         function error_elim_contra(){
             swal("Hoho no..!", "Nesecita eliminar los Trabajos antes.", "error")
 .then((value) => {
-  window.location.replace("http://localhost/proyectocloud/view/listacontratos.php");
+  window.location.replace("http://proyectocloud1.herokuapp.com/view/listacontratos.php");
 });
             }
 error_elim_contra(); 
@@ -257,7 +257,7 @@ error_elim_contra();
         function error_elim_contra(){
             swal("Hoho no..!", "Nesecita eliminar los contratos, los datos y trabajos del Obrero antes.", "error")
 .then((value) => {
-  window.location.replace("http://localhost/proyectocloud/view/listacontratos.php");
+  window.location.replace("http://proyectocloud1.herokuapp.com/view/listacontratos.php");
 });
             }
 error_elim_contra(); 

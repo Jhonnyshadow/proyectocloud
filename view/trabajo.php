@@ -58,7 +58,7 @@ session_start();
         <div class="container">
             <div class="container">
             <div class="text-center" >
-                <h3 style="font-size: 72px; font-family: initial; color: #fff">CONTRATOS</h3>
+                <h3 style="font-size: 72px; font-family: initial; color: #fff">TRABAJOS</h3>
 
             </div>
             <p>
@@ -68,7 +68,7 @@ session_start();
                     <div    class=" panel-heading"><b>INGRESO DATOS CONSTRUCCION</b></div>
                     <div class=" panel-body">
                         CEDULA:
-                        <select name="cedula">
+                        <select class="form-control" name="cedula">
 
                             <?php
                             if (isset($_SESSION['listaObreros'])) {
@@ -82,7 +82,7 @@ session_start();
                             ?>
                         </select>
                         CONSTRUCCION:
-                        <select name="cod_edificio">
+                        <select class="form-control" name="cod_edificio">
 
                             <?php
                             if (isset($_SESSION['listaConstrucciones'])) {
@@ -95,7 +95,7 @@ session_start();
                             }
                             ?>
                         </select>
-                        <input type="submit" value="Asignar">
+                        <input class="btn btn-success" type="submit" value="Asignar">
                     </div>
                 </div>
             </form>

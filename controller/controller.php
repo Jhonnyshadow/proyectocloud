@@ -9,7 +9,15 @@
  *
 * @author Mateo Salcedo
  */
+echo '<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Error</title>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">
 
+        </script>
+    </head>
+    <body>';
 require_once '../model/ContratoModel.php';
 session_start();
 $crudModel = new ContratoModel();
@@ -163,35 +171,99 @@ switch ($opcion) {
         break;
 
     case "eliminar_construccion":
+        try{
         $cod_edificio = $_REQUEST['cod_edificio'];
         $crudModel->eliminarConstruccion($cod_edificio);
         $listaConstrucciones = $crudModel->getConstrucciones();
         $_SESSION['listaConstrucciones'] = serialize($listaConstrucciones);
         header('Location: ../view/construcciones.php');
+        } catch (Exception $e) {
+    echo '<script type="text/javascript">
+        function error_elim_contra(){
+            swal("Hoho no..!", "Nesecita eliminar los Trabajos del obrero antes.", "error")
+.then((value) => {
+  window.location.replace("http://localhost/proyectocloud/view/listacontratos.php");
+});
+            }
+error_elim_contra(); 
+
+</script>';
+}
         break;
 
     case "eliminar_contrato":
+        
+        try {
         $codigo_contrato = $_REQUEST['codigo_contrato'];
         $crudModel->eliminarContrato($codigo_contrato);
         $listaContrato = $crudModel->getContratos();
         $_SESSION['listaContrato'] = serialize($listaContrato);
 
         header('Location: ../view/listacontratos.php');
+} catch (Exception $e) {
+    echo '<script type="text/javascript">
+        function error_elim_contra(){
+            swal("Hoho no..!", "Nesecita eliminar los Datos del Obrero y los Trabajos antes.", "error")
+.then((value) => {
+  window.location.replace("http://localhost/proyectocloud/view/listacontratos.php");
+});
+            }
+error_elim_contra(); 
+
+</script>';
+}
+        
         break;
     case "eliminar_obrero":
+        try{
         $cedula = $_REQUEST['cedula'];
         $crudModel->eliminarObrero($cedula);
         $listaObreros = $crudModel->getObreros();
         $_SESSION['listaObreros'] = serialize($listaObreros);
-        header('Location: ../view/obreros.php');
+         echo '<script type="text/javascript">
+        function error_elim_contra(){
+            swal("Operación Exitosamente!", "Datos del Obrero Eliminados", "success")
+.then((value) => {
+  window.location.replace("http://localhost/proyectocloud/view/obreros.php");
+});
+            }
+error_elim_contra(); 
+
+</script>';
+        
+        } catch (Exception $e) {
+    echo '<script type="text/javascript">
+        function error_elim_contra(){
+            swal("Hoho no..!", "Nesecita eliminar los Trabajos antes.", "error")
+.then((value) => {
+  window.location.replace("http://localhost/proyectocloud/view/listacontratos.php");
+});
+            }
+error_elim_contra(); 
+
+</script>';
+}
         break;
 
     case "eliminar_oficio":
+        try{
         $salario = $_REQUEST['oficio'];
         $crudModel->eliminarSalario($salario);
        $listaSalarios = $crudModel->getSalarios();
         $_SESSION['listaSalarios'] = serialize($listaSalarios);
         header('Location: ../view/salario.php');
+        } catch (Exception $e) {
+    echo '<script type="text/javascript">
+        function error_elim_contra(){
+            swal("Hoho no..!", "Nesecita eliminar los contratos, los datos y trabajos del Obrero antes.", "error")
+.then((value) => {
+  window.location.replace("http://localhost/proyectocloud/view/listacontratos.php");
+});
+            }
+error_elim_contra(); 
+
+</script>';
+}
         break;
     
     case "redireccionar":

@@ -8,10 +8,24 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">
+
+        </script>
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
+        <script type="text/javascript">
+        function myFunction(){
+  swal({
+  title: "Bienvenido",
+  text: "Accedera el la pagina Inicial",
+  icon: "warning",
+})
+.then((willDelete) => {
+  window.location.replace("http://localhost/proyectocloud/view/");
+});
+}
+ 
+myFunction(); 
+</script>
     </body>
 </html>
